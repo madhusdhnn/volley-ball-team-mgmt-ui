@@ -1,0 +1,24 @@
+.team-members-info {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.player-team-title {
+  display: inline-block;
+  font-weight: 600;
+}
+
+.players {
+  margin: 24px 0;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-left: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.players p {
+  margin: 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  padding: 16px 32px;
+}

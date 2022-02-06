@@ -1,0 +1,77 @@
+.team-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.team-title {
+  display: inline-block;
+  font-weight: 600;
+}
+
+.team-actions {
+  position: relative;
+  top: -3px;
+}
+
+.btn-section {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  margin: 0 3px;
+}
+
+.team-action-btn {
+  padding: 8px;
+  border: none;
+  width: 35px;
+  border: 1px solid #adb5bd;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  max-width: 100%;
+  line-height: 15px;
+  word-wrap: break-word;
+  transition: transform 80ms ease-in-out;
+}
+
+.team-action-btn:hover {
+  cursor: pointer;
+  border-color: #6c757d;
+}
+
+.btn-add {
+  background-color: #ee9b00;
+}
+
+.btn-edit,
+.btn-delete {
+  border-radius: 8px;
+}
+
+.team-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d8f3dc;
+  border-radius: 4px;
+  padding: 24px 32px;
+  margin-top: 24px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  text-align: right;
+  color: #343a40;
+}
+
+.section-value {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #000;
+}

@@ -1,0 +1,21 @@
+<nav class="nav-bar">
+  <div class="nav-items">
+    <div [ngClass]="activeTab === 'Home' ? 'nav-item-active' : 'nav-item'">
+      <a id="home-nav-link" href="#" (click)="onClick()">Home</a>
+    </div>
+    <div
+      [ngClass]="activeTab === 'My Profile' ? 'nav-item-active' : 'nav-item'"
+    >
+      <a id="my-profile-nav-link" href="#" (click)="onClick()">My Profile</a>
+    </div>
+    <div class="nav-item">
+      <a
+        id="signout-nav-link"
+        class="signout-nav-item"
+        href="#"
+        (click)="onClick()"
+        >sign out</a
+      >
+    </div>
+  </div>
+</nav>

@@ -1,1 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 110%;
+}
+
+h3 {
+  font-size: 2.92rem;
+  margin: 1.92rem 0 1.62rem 0;
+}
+
+h5 {
+  font-size: 1.56rem;
+  margin: 1.06rem 0 0.56rem 0;
+}
+
+h6 {
+  font-size: 1.15rem;
+  margin: 0.75rem 0 0.45rem 0;
+}
+
+p {
+  font-size: 16px;
+}
+
+ul,
+ol,
+dl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+select {
+  margin: 0;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 0.5rem 0 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+  width: 90%;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section {
+  padding: 80px 0 0 0;
+}
+
+.row .col {
+  float: left;
+  min-height: 1px;
+}
+
+.col .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.row .col.col-medium {
+  width: 50%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.row .col.col-small {
+  width: 33.33%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.row .col-small.col-offset-small {
+  margin-left: 33.33%;
+}
+
+.row .col-medium.col-offset-medium {
+  margin-left: 15%;
+}
+
+.card {
+  position: relative;
+  margin: 0.5rem 0 0.75rem 0;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
+    0 1px 5px 0 rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  transition: box-shadow 0.25s -webkit-box-shadow 0.25s;
+  border-radius: 2px;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover {
+  cursor: pointer;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip-text);
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  left: 100%;
+  margin-left: 15px;
+  min-width: 20px;
+  max-width: 150px;
+  width: 120px;
+  padding: 6px;
+  border-radius: 4px;
+  text-align: center;
+  opacity: 0;
+  font-size: 14px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+.tooltip-sm:before {
+  max-width: 90px;
+  padding: 4px;
+  font-size: 12px !important;
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 85%;
+  }
+}

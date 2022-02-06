@@ -1,0 +1,35 @@
+<div class="team-header">
+  <h5 class="team-title">{{ team?.displayName }}</h5>
+  <div class="team-actions">
+    <div class="btn-section">
+      <button
+        type="button"
+        name="edit-team-btn"
+        class="team-action-btn btn-edit"
+        (click)="editTeamDetails(team)"
+      >
+        <fa-icon [icon]="faPen" size="sm"></fa-icon>
+      </button>
+    </div>
+    <div class="btn-section" *ngIf="isAdmin">
+      <button
+        type="button"
+        name="delete-team-btn"
+        class="team-action-btn btn-delete"
+        (click)="deleteTeam(team)"
+      >
+        <fa-icon [icon]="faTrash" size="sm"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="team-info">
+  <div>
+    <p class="section-value">{{ totalPlayers }} / {{ team?.maxPlayers }}</p>
+    <p class="section-title">Players</p>
+  </div>
+  <div>
+    <p class="section-value">{{ team?.audit?.createdAt }}</p>
+    <p class="section-title">Created On</p>
+  </div>
+</div>

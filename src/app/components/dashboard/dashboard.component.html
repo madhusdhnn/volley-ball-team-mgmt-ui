@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row section">
+    <teams-dropdown
+      *ngIf="isAdmin"
+      [teams]="teams"
+      (selectTeamEvent)="onTeamChange($event)"
+    ></teams-dropdown>
+    <div class="col col-small">
+      <teams
+        [totalPlayers]="players.length"
+        [currentTeam]="currentTeam"
+        [isAdmin]="isAdmin"
+      ></teams>
+    </div>
+    <div class="col col-medium col-offset-medium">
+      <div class="team-members">
+        <players [players]="players"></players>
+      </div>
+    </div>
+  </div>
+</div>

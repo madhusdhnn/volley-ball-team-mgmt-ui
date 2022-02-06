@@ -1,0 +1,43 @@
+.teams-dropdown-container {
+  margin-left: auto;
+  margin-bottom: 2%;
+}
+
+.teams-dropdown {
+  display: inline-block;
+  min-width: 140px;
+  max-width: 260px;
+  position: relative;
+  top: -3px;
+}
+
+.dropdown-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #adb5bd;
+  border-radius: 8px;
+  padding: 4px;
+  line-height: 25px;
+}
+
+.dropdown-content:hover {
+  border-color: #6c757d;
+}
+
+.dropdown-content select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dropdown-content::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
