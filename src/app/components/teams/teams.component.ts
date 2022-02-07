@@ -8,7 +8,7 @@ import Team from 'src/app/Team';
 })
 export class TeamsComponent implements OnInit {
   @Input() isAdmin: boolean = false;
-  @Input() currentTeam: Team | undefined = undefined;
+  @Input() currentTeam: Team;
   @Input() totalPlayers: number = 0;
 
   constructor() {}

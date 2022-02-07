@@ -12,7 +12,7 @@ import Team from 'src/app/Team';
 export class DashboardComponent implements OnInit {
   teams: Team[] = [];
   players: Player[] = [];
-  currentTeam: Team | undefined = undefined;
+  currentTeam: Team;
 
   isAdmin: boolean = true;
 

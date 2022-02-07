@@ -12,19 +12,19 @@ export class TeamInfoComponent implements OnInit {
   faPen = faPen;
 
   @Input() isAdmin: boolean = false;
-  @Input() team: Team | undefined = undefined;
+  @Input() team: Team;
   @Input() totalPlayers: number = 0;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  editTeamDetails(team: Team | undefined) {
+  editTeamDetails(team: Team) {
     // enable a modal and show the current team details for editing
     console.log(team);
   }
 
-  deleteTeam(team: Team | undefined) {
+  deleteTeam(team: Team) {
     console.log(team);
   }
 }
