@@ -1,4 +1,23 @@
-<h5 class="player-team-title">Members</h5>
-<div class="players">
-  <p *ngFor="let player of players">{{ player.name }}</p>
+<div class="player-header">
+  <h5 class="player-team-title">Members</h5>
+  <button
+    *ngIf="isAdmin"
+    type="button"
+    name="create-player-btn"
+    class="action-btn btn-create-player btn-create"
+    (click)="createPlayer()"
+  >
+    <fa-icon [icon]="faPlus" size="sm"></fa-icon>
+    <span>Create new player</span>
+  </button>
 </div>
+<ul class="players">
+  <li class="player avatar" *ngFor="let player of players">
+    <img
+      src="/assets/profile.jpg"
+      alt="avatar image"
+      class="player-avatar avatar-circle"
+    />
+    <span>{{ player.name }}</span>
+  </li>
+</ul>

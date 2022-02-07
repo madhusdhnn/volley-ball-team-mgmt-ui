@@ -5,20 +5,70 @@
   justify-content: space-between;
 }
 
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .player-team-title {
   display: inline-block;
   font-weight: 600;
+  margin-top: 0.56rem;
 }
 
 .players {
   margin: 24px 0;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.5);
-  border-left: 0.5px solid rgba(0, 0, 0, 0.5);
-  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
 }
 
-.players p {
+.players span {
+  margin-top: 8px;
+  display: inline-block;
+  line-height: 1.5rem;
+  font-size: 16px;
+}
+
+.player {
+  background-color: #fff;
+  padding: 10px 20px;
   margin: 0;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
-  padding: 16px 32px;
+  line-height: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.players .player:last-child {
+  border-bottom: none;
+}
+
+.player.avatar {
+  min-height: 65px;
+  padding-left: 72px;
+  position: relative;
+}
+
+.player .player-avatar {
+  position: absolute;
+  left: 15px;
+  width: 42px;
+  height: 42px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.player .player-avatar.avatar-circle {
+  border-radius: 50%;
+}
+
+.btn-create-player.btn-create {
+  width: 40%;
+  margin-top: 0;
+}
+
+.btn-create-player.btn-create > span {
+  margin-left: 8px;
 }

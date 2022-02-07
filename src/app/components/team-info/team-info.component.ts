@@ -28,4 +28,8 @@ export class TeamInfoComponent implements OnInit {
   deleteTeam(team: Team) {
     console.log(team);
   }
+
+  createTeam() {
+    console.log('creating team');
+  }
 }

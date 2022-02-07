@@ -5,7 +5,7 @@
       <button
         type="button"
         name="edit-team-btn"
-        class="team-action-btn btn-edit"
+        class="action-btn btn-edit"
         (click)="editTeamDetails(team)"
       >
         <fa-icon [icon]="faPen" size="sm"></fa-icon>
@@ -15,7 +15,7 @@
       <button
         type="button"
         name="delete-team-btn"
-        class="team-action-btn btn-delete"
+        class="action-btn btn-delete"
         (click)="deleteTeam(team)"
       >
         <fa-icon [icon]="faTrash" size="sm"></fa-icon>
@@ -33,7 +33,12 @@
     <p class="section-title">Created On</p>
   </div>
 </div>
-<button type="button" name="create-team-btn" class="team-action-btn btn-create">
+<button
+  type="button"
+  name="create-team-btn"
+  class="action-btn btn-create"
+  (click)="createTeam()"
+>
   <fa-icon [icon]="faPlus" size="sm"></fa-icon>
   <span class="btn-label">Create new team</span>
 </button>
