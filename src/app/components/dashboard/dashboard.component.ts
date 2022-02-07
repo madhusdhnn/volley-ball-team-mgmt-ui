@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Player } from 'src/app/Player';
 import { PlayersService } from 'src/app/services/players.service';
 import { TeamsService } from 'src/app/services/teams.service';
+import { UiService } from 'src/app/services/ui.service';
 import Team from 'src/app/Team';
 
 @Component({
@@ -13,13 +15,20 @@ export class DashboardComponent implements OnInit {
   teams: Team[] = [];
   players: Player[] = [];
   currentTeam: Team;
+  subscription: Subscription;
 
   isAdmin: boolean = true;
 
   constructor(
     private teamsService: TeamsService,
-    private playerService: PlayersService
-  ) {}
+    private playerService: PlayersService,
+    private uiService: UiService
+  ) {
+    this.subscription = this.uiService.onSelectTeam().subscribe((_teamId) => {
+      this.setTeam(_teamId);
+      this.setPlayers(_teamId);
+    });
+  }
 
   ngOnInit(): void {
     if (this.isAdmin) {
@@ -27,13 +36,11 @@ export class DashboardComponent implements OnInit {
         .getAllTeams()
         .subscribe((_teams) => (this.teams = _teams));
     }
-    this.setTeam('1');
-    this.setPlayers('1');
+    this.uiService.selectTeam('1');
   }
 
   onTeamChange(teamId: string) {
-    this.setTeam(teamId);
-    this.setPlayers(teamId);
+    this.uiService.selectTeam(teamId);
   }
 
   private setPlayers(teamId: string) {

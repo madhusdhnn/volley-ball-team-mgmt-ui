@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Team from '../../Team';
 
 @Component({
@@ -10,6 +10,7 @@ import Team from '../../Team';
 export class TeamInfoComponent implements OnInit {
   faTrash = faTrash;
   faPen = faPen;
+  faPlus = faPlus;
 
   @Input() isAdmin: boolean = false;
   @Input() team: Team;
