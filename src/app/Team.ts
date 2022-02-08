@@ -4,6 +4,6 @@ export default interface Team {
   teamId?: string;
   name: string;
   displayName: string;
-  maxPlayers: number;
-  audit: Audit;
+  maxPlayers?: number;
+  audit?: Audit;
 }

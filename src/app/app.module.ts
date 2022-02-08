@@ -11,11 +11,15 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AllPlayersComponent } from './components/all-players/all-players.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'players/all', component: AllPlayersComponent },
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +30,14 @@ const appRoutes: Routes = [
     TeamsComponent,
     DashboardComponent,
     ProfileComponent,
+    AllPlayersComponent,
   ],
-  imports: [BrowserModule, FontAwesomeModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    FontAwesomeModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

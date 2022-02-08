@@ -6,6 +6,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '1',
       name: 'Ross Geller',
+      initials: 'RG',
+      photoUrl: null,
       shirtNo: 3,
       team: {
         id: '2',
@@ -18,6 +20,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Brooklyn, NYC',
         favouritePositions: null,
       },
       audit: {
@@ -28,6 +31,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '2',
       name: 'Rachel Green',
+      initials: 'RG',
+      photoUrl: null,
       shirtNo: 5,
       team: {
         id: '1',
@@ -40,6 +45,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Queens, NYC',
         favouritePositions: null,
       },
       audit: {
@@ -50,6 +56,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '3',
       name: 'Chandler Bing',
+      initials: 'CB',
+      photoUrl: null,
       shirtNo: 2,
       team: {
         id: '2',
@@ -62,6 +70,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Brooklyn, NYC',
         favouritePositions: null,
       },
       audit: {
@@ -72,6 +81,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '4',
       name: 'Monica Geller',
+      initials: 'MG',
+      photoUrl: null,
       shirtNo: 4,
       team: {
         id: '1',
@@ -84,6 +95,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Brooklyn, NYC',
         favouritePositions: null,
       },
       audit: {
@@ -94,6 +106,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '5',
       name: 'Phoebe Buffay',
+      initials: 'PB',
+      photoUrl: null,
       shirtNo: 6,
       team: {
         id: '1',
@@ -106,6 +120,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Manhattan, NYC',
         favouritePositions: null,
       },
       audit: {
@@ -116,6 +131,8 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
     {
       playerId: '6',
       name: 'Joey Tribbianni',
+      initials: 'JT',
+      photoUrl: null,
       shirtNo: 1,
       team: {
         id: '2',
@@ -128,6 +145,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
         weight: null,
         power: null,
         speed: null,
+        location: 'Brooklyn, NYC',
         favouritePositions: null,
       },
       audit: {

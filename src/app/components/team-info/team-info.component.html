@@ -3,6 +3,7 @@
   <div class="team-actions">
     <div class="btn-section">
       <button
+        *ngIf="isAdmin"
         type="button"
         name="edit-team-btn"
         class="action-btn btn-edit"
@@ -34,11 +35,67 @@
   </div>
 </div>
 <button
+  *ngIf="isAdmin"
   type="button"
   name="create-team-btn"
   class="action-btn btn-create"
-  (click)="createTeam()"
+  (click)="toggleCreateTeamModal()"
 >
   <fa-icon [icon]="faPlus" size="sm"></fa-icon>
   <span class="btn-label">Create new team</span>
 </button>
+
+<!-- Add player modal -->
+<div
+  id="create-team-form-modal"
+  class="modal modal-form"
+  [ngClass]="{ open: toggleModal }"
+>
+  <div class="modal-content">
+    <button class="modal-close-btn" (click)="closeModal()">
+      <fa-icon [icon]="faTimes" size="lg"></fa-icon>
+    </button>
+    <h5>Create a team</h5>
+    <form class="create-team-form" autocomplete="off" (submit)="onSubmit()">
+      <div class="row">
+        <div class="form-control col col-large">
+          <label for="team-name">Name</label>
+          <input
+            type="text"
+            id="team-name"
+            name="teamName"
+            [(ngModel)]="teamName"
+            (ngModelChange)="changeTeamName($event)"
+            [ngClass]="{ invalid: teamNameInvalid }"
+          />
+        </div>
+        <div class="form-control col col-large">
+          <label for="team-display-name">
+            <span>Display Name</span>
+            <span
+              class="tooltip tooltip-lg"
+              data-tooltip-text="This is the name you will be seeing everywhere"
+            >
+              <fa-icon [icon]="faQuestionCircle" size="sm" class="ic"></fa-icon>
+            </span>
+          </label>
+          <input
+            type="text"
+            id="team-display-name"
+            name="displayName"
+            [(ngModel)]="displayName"
+            (ngModelChange)="changeDisplayName($event)"
+            [ngClass]="{ invalid: displayNameInvalid }"
+          />
+          <p class="info-text">
+            NOTE: Currently a team can have only 6 players
+          </p>
+        </div>
+        <div class="form-control col col-large">
+          <input type="submit" value="create" class="btn-submit" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-overlay" [ngClass]="{ open: toggleModal }"></div>

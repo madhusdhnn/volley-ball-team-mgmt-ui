@@ -15,8 +15,6 @@
 
 .nav-item,
 .nav-item-active {
-  user-select: none;
-  text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.5px;
   font-size: 16px;
@@ -33,5 +31,5 @@
 .nav-item:hover,
 .nav-item-active:hover {
   cursor: pointer;
-  transform: scale(0.95);
+  transform: scale(0.98);
 }

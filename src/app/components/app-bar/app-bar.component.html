@@ -8,18 +8,25 @@
             routerLink="/"
             routerLinkActive="nav-item-active"
             [routerLinkActiveOptions]="{ exact: true }"
-            (click)="onClick()"
             class="nav-item"
             >Home</a
           >
           <a
             id="my-profile-nav-link"
-            routerLink="/profile"
+            [routerLink]="['/profile']"
             routerLinkActive="nav-item-active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-item"
-            (click)="onClick()"
             >My Profile</a
+          >
+          <a
+            *ngIf="isAdmin"
+            id="all-players-nav-link"
+            [routerLink]="['/players', 'all']"
+            routerLinkActive="nav-item-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-item"
+            >All Players</a
           >
         </div>
       </div>

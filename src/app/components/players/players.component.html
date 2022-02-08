@@ -1,23 +1,34 @@
 <div class="player-header">
   <h5 class="player-team-title">Members</h5>
   <button
-    *ngIf="isAdmin"
+    *ngIf="isAdmin && players.length < 6"
     type="button"
     name="create-player-btn"
     class="action-btn btn-create-player btn-create"
-    (click)="createPlayer()"
+    (click)="addPlayerToTeam()"
   >
     <fa-icon [icon]="faPlus" size="sm"></fa-icon>
-    <span>Create new player</span>
+    <span>Add player</span>
   </button>
 </div>
-<ul class="players">
-  <li class="player avatar" *ngFor="let player of players">
-    <img
-      src="/assets/profile.jpg"
-      alt="avatar image"
-      class="player-avatar avatar-circle"
-    />
-    <span>{{ player.name }}</span>
-  </li>
-</ul>
+<div class="players" *ngIf="players.length > 0; else noMembers">
+  <a href="#!" class="player avatar" *ngFor="let player of players">
+    <span *ngIf="player.photoUrl" class="player-avatar avatar-circle">
+      {{ player.photoUrl }}
+    </span>
+    <div class="empty-avatar avatar-circle" *ngIf="!player.photoUrl">
+      <span class="text-avatar">{{ player.initials }}</span>
+    </div>
+    <p class="player-name">{{ player.name }}</p>
+    <p class="player-location" *ngIf="player.additionalInfo.location">
+      {{ player.additionalInfo.location }}
+    </p>
+  </a>
+</div>
+
+<ng-template #noMembers>
+  <div class="empty-players">
+    <p>There are no players in the team</p>
+    <p>Try adding one</p>
+  </div>
+</ng-template>

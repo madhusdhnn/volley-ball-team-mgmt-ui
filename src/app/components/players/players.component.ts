@@ -17,7 +17,7 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  createPlayer() {
+  addPlayerToTeam() {
     console.log('creating player');
   }
 }

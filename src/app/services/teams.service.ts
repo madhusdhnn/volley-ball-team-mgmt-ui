@@ -7,10 +7,13 @@ import Team from '../Team';
   providedIn: 'root',
 })
 export class TeamsService {
-  constructor() {}
+  teams: Team[] = [];
+  constructor() {
+    this.teams = mockTeams.data;
+  }
 
   getAllTeams(): Observable<Team[]> {
-    return of(mockTeams.data);
+    return of(this.teams);
   }
 
   // returns currently logged in player's team
@@ -29,6 +32,11 @@ export class TeamsService {
         ),
       },
     };
-    return of(mockTeams.data.find((_team) => _team.teamId === teamId) || dummy);
+    return of(this.teams.find((_team) => _team.teamId === teamId) || dummy);
+  }
+
+  createTeam(team: Team): Observable<{ status: string }> {
+    this.teams.push(team);
+    return of({ status: 'success' });
   }
 }

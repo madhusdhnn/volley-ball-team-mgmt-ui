@@ -6,6 +6,7 @@ interface PlayerAdditionalInfo {
   weight: number | null;
   power: number | null;
   speed: number | null;
+  location: string | null;
   favouritePositions: string | null;
 }
 
@@ -18,6 +19,8 @@ export interface TeamInfo {
 export interface Player {
   playerId?: string;
   name: string;
+  initials: string;
+  photoUrl: string | null;
   team: TeamInfo;
   shirtNo: number;
   additionalInfo: PlayerAdditionalInfo;

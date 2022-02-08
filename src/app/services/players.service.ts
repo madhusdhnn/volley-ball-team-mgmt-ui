@@ -12,4 +12,8 @@ export class PlayersService {
   getPlayersInTeam(teamId: string): Observable<Player[]> {
     return of(mockPlayers.data.filter((_player) => _player.team.id === teamId));
   }
+
+  getAllPlayers(): Observable<Player[]> {
+    return of(mockPlayers.data);
+  }
 }
