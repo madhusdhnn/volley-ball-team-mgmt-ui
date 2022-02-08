@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AllPlayersComponent } from './components/all-players/all-players.component';
 import { FormsModule } from '@angular/forms';
+import { PlayerModalComponent } from './components/player-modal/player-modal.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     AllPlayersComponent,
+    PlayerModalComponent,
   ],
   imports: [
     BrowserModule,
