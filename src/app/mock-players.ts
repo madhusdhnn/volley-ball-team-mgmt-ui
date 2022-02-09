@@ -11,8 +11,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 3,
       team: {
         id: '2',
-        name: 'friends-boys',
-        displayName: 'Friends Boys',
+        name: 'Friends Men',
       },
       additionalInfo: {
         age: null,
@@ -36,8 +35,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 5,
       team: {
         id: '1',
-        name: 'friends-girls',
-        displayName: 'Friends Girls',
+        name: 'Friends Women',
       },
       additionalInfo: {
         age: null,
@@ -61,8 +59,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 2,
       team: {
         id: '2',
-        name: 'friends-boys',
-        displayName: 'Friends Boys',
+        name: 'Friends Men',
       },
       additionalInfo: {
         age: null,
@@ -86,8 +83,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 4,
       team: {
         id: '1',
-        name: 'friends-girls',
-        displayName: 'Friends Girls',
+        name: 'Friends Women',
       },
       additionalInfo: {
         age: null,
@@ -111,8 +107,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 6,
       team: {
         id: '1',
-        name: 'friends-girls',
-        displayName: 'Friends Girls',
+        name: 'Friends Women',
       },
       additionalInfo: {
         age: null,
@@ -136,8 +131,7 @@ const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
       shirtNo: 1,
       team: {
         id: '2',
-        name: 'friends-boys',
-        displayName: 'Friends Boys',
+        name: 'Friends Men',
       },
       additionalInfo: {
         age: null,

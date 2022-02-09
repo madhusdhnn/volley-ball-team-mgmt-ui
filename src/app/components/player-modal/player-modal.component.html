@@ -7,11 +7,11 @@
     <button class="modal-close-btn" (click)="closeModal()">
       <fa-icon [icon]="faTimes" size="lg"></fa-icon>
     </button>
-    <h5>Create a team</h5>
+    <h5>New Team</h5>
     <form class="create-team-form" autocomplete="off" (submit)="onSubmit()">
       <div class="row">
         <div class="form-control col col-large">
-          <label for="team-name">Name</label>
+          <label for="team-name">Team Name</label>
           <input
             type="text"
             id="team-name"
@@ -23,30 +23,6 @@
           <span
             class="helper-text"
             [ngClass]="{ 'invalid-text': teamNameInvalid }"
-            >Required</span
-          >
-        </div>
-        <div class="form-control col col-large">
-          <label for="team-display-name">
-            <span>Display Name</span>
-            <span
-              class="tooltip tooltip-lg"
-              data-tooltip-text="This is the name you will be seeing everywhere"
-            >
-              <fa-icon [icon]="faQuestionCircle" size="sm" class="ic"></fa-icon>
-            </span>
-          </label>
-          <input
-            type="text"
-            id="team-display-name"
-            name="displayName"
-            [(ngModel)]="displayName"
-            (ngModelChange)="changeDisplayName($event)"
-            [ngClass]="{ invalid: displayNameInvalid }"
-          />
-          <span
-            class="helper-text"
-            [ngClass]="{ 'invalid-text': displayNameInvalid }"
             >Required</span
           >
           <p class="info-text">

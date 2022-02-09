@@ -5,8 +5,7 @@ const TEAM_RESPONSE: { status: string; data: Team[] } = {
   data: [
     {
       teamId: '1',
-      name: 'friends-girls',
-      displayName: 'Friends Girls',
+      name: 'Friends girls',
       maxPlayers: 6,
       audit: {
         createdAt: new Date('2022-01-08T13:23:00.582Z').toLocaleDateString(
@@ -19,8 +18,7 @@ const TEAM_RESPONSE: { status: string; data: Team[] } = {
     },
     {
       teamId: '2',
-      name: 'friends-boys',
-      displayName: 'Friends Boys',
+      name: 'Friends Men',
       maxPlayers: 6,
       audit: {
         createdAt: new Date('2022-01-07T13:22:43.253Z').toLocaleDateString(

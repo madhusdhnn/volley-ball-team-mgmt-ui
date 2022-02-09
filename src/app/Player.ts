@@ -13,7 +13,6 @@ interface PlayerAdditionalInfo {
 export interface TeamInfo {
   id: string;
   name: string;
-  displayName: string;
 }
 
 export interface Player {

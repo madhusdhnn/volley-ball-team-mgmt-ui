@@ -1,6 +1,6 @@
 .modal-form {
   width: 400px;
-  height: 430px;
+  height: 310px;
 }
 
 .modal-form .modal-content {
@@ -17,7 +17,8 @@
   margin-right: 0;
 }
 
-.btn-submit {
+.btn-submit,
+.btn-cancel {
   width: 100%;
   display: inline-block;
   border: none;
@@ -32,7 +33,13 @@
   transition: transform 85ms ease-in-out;
 }
 
-.btn-submit:hover {
+.btn-submit:hover,
+.btn-cancel:hover {
   cursor: pointer;
   transform: scale(0.98);
+}
+
+.btn-cancel {
+  background-color: #ddd;
+  color: #000;
 }

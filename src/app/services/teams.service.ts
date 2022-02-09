@@ -20,7 +20,7 @@ export class TeamsService {
   getTeam(teamId: string): Observable<Team> {
     const dummy = {
       teamId: '1',
-      name: 'friends-girls',
+      name: 'Friends Women',
       displayName: 'Friends Girls',
       maxPlayers: 6,
       audit: {

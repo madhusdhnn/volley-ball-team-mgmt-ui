@@ -3,7 +3,7 @@
     <div class="dropdown-content">
       <select id="team-names-options" #t (change)="onTeamChange(t.value)">
         <option *ngFor="let team of teams" [value]="team.teamId">
-          {{ team.displayName }}
+          {{ team.name }}
         </option>
       </select>
     </div>

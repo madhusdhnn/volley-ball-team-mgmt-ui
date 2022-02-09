@@ -19,18 +19,9 @@ export class PlayerModalComponent implements OnInit {
   teamName: string;
   teamNameInvalid: boolean = false;
 
-  displayName: string;
-  displayNameInvalid: boolean = false;
-
   constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {}
-
-  changeDisplayName(val: any) {
-    if (val && this.displayNameInvalid) {
-      this.displayNameInvalid = false;
-    }
-  }
 
   changeTeamName(val: any) {
     if (val && this.teamNameInvalid) {
@@ -50,15 +41,10 @@ export class PlayerModalComponent implements OnInit {
       this.teamNameInvalid = true;
       isError = true;
     }
-    if (!this.displayName) {
-      this.displayNameInvalid = true;
-      isError = true;
-    }
 
     if (!isError) {
       const newTeam: Team = {
-        name: this.teamName,
-        displayName: this.displayName,
+        name: this.teamName
       };
       this.teamsService.createTeam(newTeam).subscribe(() => {
         setTimeout(() => this.closeModal(), 400);
@@ -68,6 +54,5 @@ export class PlayerModalComponent implements OnInit {
 
   private resetForm(): void {
     this.teamName = '';
-    this.displayName = '';
   }
 }
