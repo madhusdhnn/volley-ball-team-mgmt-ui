@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { TeamsService } from 'src/app/services/teams.service';
-import { Team } from 'src/app/Team';
+import { Team } from '../../models/Team';
 
 @Component({
   selector: 'team-info',

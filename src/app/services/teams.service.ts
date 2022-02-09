@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import mockTeams from '../mock-teams';
-import { NewTeam, Team } from '../Team';
+import { NewTeam, Team } from '../models/Team';
 
 @Injectable({
   providedIn: 'root',

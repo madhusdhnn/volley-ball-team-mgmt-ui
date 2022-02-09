@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Player } from 'src/app/Player';
+import { Player } from '../../models/Player';
 
 @Component({
   selector: 'players',

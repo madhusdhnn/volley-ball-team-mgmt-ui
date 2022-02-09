@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Player } from 'src/app/Player';
+import { Player } from '../../models/Player';
 import { PlayersService } from 'src/app/services/players.service';
 import { TeamsService } from 'src/app/services/teams.service';
 import { UiService } from 'src/app/services/ui.service';
-import { Team } from 'src/app/Team';
+import { Team } from '../../models/Team';
 
 @Component({
   selector: 'dashboard',

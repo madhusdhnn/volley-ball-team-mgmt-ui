@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Team } from 'src/app/Team';
+import { Team } from '../../models/Team';
 
 @Component({
   selector: 'teams-dropdown',
