@@ -1,0 +1,83 @@
+.team-header {
+  display: flex;
+  width: 100%;
+  margin-top: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-title-form {
+  display: inline-block;
+  width: 70%;
+  max-width: 100%;
+}
+
+.team-title-form.full-width {
+  width: 100%;
+}
+
+.disabled-team-title {
+  display: inline-block;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #000;
+}
+
+.team-title {
+  display: inline-block;
+  height: 2rem;
+  border: 1px solid #adb5bd;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+  font-weight: 400;
+  width: 70%;
+  color: #001219;
+}
+
+.team-title-form input[type="text"]:not(:disabled):focus {
+  border: 1px solid #212529 !important;
+}
+
+.team-title.invalid {
+  border: 1px solid #dd2c2f;
+  color: #dd2c2f;
+}
+
+.team-actions {
+  position: relative;
+}
+
+.action-btn.btn-save {
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 80ms ease-in;
+}
+
+.action-btn.btn-save:hover {
+  transform: scale(0.98);
+}
+
+.btn-save span {
+  margin-left: 8px;
+}
+
+.btn-section,
+.btn-section-lg {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  margin: 0 3px;
+}
+
+.btn-section.btn-section-lg {
+  max-width: 100%;
+  width: 25%;
+  margin-left: 4%;
+  top: 0;
+}

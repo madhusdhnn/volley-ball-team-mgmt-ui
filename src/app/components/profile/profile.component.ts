@@ -3,7 +3,7 @@ import Profile from 'src/app/Profile';
 import { ProfileService } from 'src/app/services/profile.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-profile',
+  selector: 'profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })

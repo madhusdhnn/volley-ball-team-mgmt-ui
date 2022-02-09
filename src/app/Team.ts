@@ -1,8 +1,12 @@
 import { Audit } from './Audit';
 
-export default interface Team {
-  teamId?: string;
+export interface Team {
+  teamId: string;
   name: string;
-  maxPlayers?: number;
-  audit?: Audit;
+  maxPlayers: number;
+  audit: Audit;
+}
+
+export interface NewTeam {
+  teamName: string;
 }

@@ -1,11 +1,11 @@
-import Team from './Team';
+import { Team } from './Team';
 
 const TEAM_RESPONSE: { status: string; data: Team[] } = {
   status: 'success',
   data: [
     {
       teamId: '1',
-      name: 'Friends girls',
+      name: 'Friends Women',
       maxPlayers: 6,
       audit: {
         createdAt: new Date('2022-01-08T13:23:00.582Z').toLocaleDateString(

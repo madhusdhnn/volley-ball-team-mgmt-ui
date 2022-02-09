@@ -4,7 +4,7 @@ import { Player } from 'src/app/Player';
 import { PlayersService } from 'src/app/services/players.service';
 import { TeamsService } from 'src/app/services/teams.service';
 import { UiService } from 'src/app/services/ui.service';
-import Team from 'src/app/Team';
+import { Team } from 'src/app/Team';
 
 @Component({
   selector: 'dashboard',

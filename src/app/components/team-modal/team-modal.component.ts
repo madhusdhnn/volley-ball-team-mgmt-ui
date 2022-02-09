@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTimes, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { TeamsService } from 'src/app/services/teams.service';
-import Team from 'src/app/Team';
+import { NewTeam, Team } from 'src/app/Team';
 
 @Component({
-  selector: 'player-modal',
-  templateUrl: './player-modal.component.html',
-  styleUrls: ['./player-modal.component.css'],
+  selector: 'team-modal',
+  templateUrl: './team-modal.component.html',
+  styleUrls: ['./team-modal.component.css'],
 })
-export class PlayerModalComponent implements OnInit {
+export class TeamModalComponent implements OnInit {
   @Input() toggleModal: boolean = false;
 
   @Output() toggleModalChange = new EventEmitter<boolean>();
@@ -43,8 +43,8 @@ export class PlayerModalComponent implements OnInit {
     }
 
     if (!isError) {
-      const newTeam: Team = {
-        name: this.teamName
+      const newTeam: NewTeam = {
+        teamName: this.teamName,
       };
       this.teamsService.createTeam(newTeam).subscribe(() => {
         setTimeout(() => this.closeModal(), 400);

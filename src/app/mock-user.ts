@@ -3,14 +3,14 @@ import Profile from './Profile';
 const ADMIN_RESPONSE: { status: string; data: Profile } = {
   status: 'success',
   data: {
-    userId: '1',
     username: 'john_doe',
     fullName: 'John Doe',
     firstName: 'John',
     lastName: 'Doe',
-    profileImage: null,
-    email: 'john@example.com',
-    role: 'ADMIN',
+    profileImageUrl: null,
+    emailId: 'john@example.com',
+    roleId: '1',
+    roleName: 'ADMIN',
     enabled: true,
   },
 };
@@ -18,14 +18,14 @@ const ADMIN_RESPONSE: { status: string; data: Profile } = {
 const PLAYER_RESPONSE: { status: string; data: Profile } = {
   status: 'success',
   data: {
-    userId: '2',
     username: 'jane_doe',
     fullName: 'Jane Doe',
     firstName: 'Jane',
     lastName: 'Doe',
-    profileImage: null,
-    email: 'jane@example.com',
-    role: 'PLAYER',
+    profileImageUrl: null,
+    emailId: 'jane@example.com',
+    roleId: '2',
+    roleName: 'PLAYER',
     enabled: true,
   },
 };

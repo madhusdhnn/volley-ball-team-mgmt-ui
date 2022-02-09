@@ -361,9 +361,8 @@ input {
 
 .form-control label {
   position: absolute;
-  top: -14px;
-  left: 1px;
-  font-size: 15px;
+  top: -15px;
+  font-size: 14px;
   font-weight: 500;
   cursor: text;
 }
@@ -407,6 +406,14 @@ input {
 
 .form-control .helper-text.invalid-text {
   opacity: 1;
+}
+
+.enabled {
+  display: initial;
+}
+
+.disabled {
+  display: none;
 }
 
 @media only screen and (min-width: 900px) {

@@ -13,7 +13,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AllPlayersComponent } from './components/all-players/all-players.component';
 import { FormsModule } from '@angular/forms';
-import { PlayerModalComponent } from './components/player-modal/player-modal.component';
+import { TeamModalComponent } from './components/team-modal/team-modal.component';
+import { TeamTitleComponent } from './components/team-title/team-title.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     AllPlayersComponent,
-    PlayerModalComponent,
+    TeamModalComponent,
+    TeamTitleComponent,
   ],
   imports: [
     BrowserModule,

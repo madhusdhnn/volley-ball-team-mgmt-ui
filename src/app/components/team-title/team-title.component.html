@@ -1,0 +1,50 @@
+<div class="team-header">
+  <form
+    autocomplete="off"
+    class="team-title-form"
+    [ngClass]="{ 'full-width': editMode }"
+    (submit)="onSubmit()"
+  >
+    <input
+      [id]="team?.teamId"
+      type="text"
+      name="teamName"
+      [disabled]="editMode ? false : 'disabled'"
+      [(ngModel)]="teamName"
+      [ngClass]="editMode ? 'team-title' : 'disabled-team-title'"
+    />
+    <div *ngIf="editMode" class="btn-section btn-section-lg">
+      <button
+        type="submit"
+        name="team-title-btn-submit"
+        class="action-btn btn-save"
+      >
+        <fa-icon [icon]="faSave" size="sm"></fa-icon>
+        <span>Save</span>
+      </button>
+    </div>
+  </form>
+  <div class="team-actions" *ngIf="!editMode">
+    <div class="btn-section">
+      <button
+        *ngIf="isAdmin"
+        type="button"
+        name="edit-team-btn"
+        class="action-btn btn-edit"
+        (click)="enableEditMode()"
+      >
+        <fa-icon [icon]="faPen" size="sm"></fa-icon>
+      </button>
+    </div>
+    <div class="btn-section" *ngIf="isAdmin">
+      <button
+        type="button"
+        name="delete-team-btn"
+        class="action-btn btn-delete"
+        (click)="deleteTeam(team)"
+      >
+        <fa-icon [icon]="faTrash" size="sm"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

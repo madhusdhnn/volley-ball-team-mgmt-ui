@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import mockTeams from '../mock-teams';
-import Team from '../Team';
+import { NewTeam, Team } from '../Team';
 
 @Injectable({
   providedIn: 'root',
@@ -35,8 +35,29 @@ export class TeamsService {
     return of(this.teams.find((_team) => _team.teamId === teamId) || dummy);
   }
 
-  createTeam(team: Team): Observable<{ status: string }> {
+  createTeam(newTeam: NewTeam): Observable<{ status: string }> {
+    const team: Team = {
+      teamId: '3',
+      name: newTeam.teamName,
+      maxPlayers: 6,
+      audit: {
+        createdAt: new Date().toLocaleDateString('en-US'),
+        updatedAt: new Date().toLocaleDateString('en-US'),
+      },
+    };
     this.teams.push(team);
     return of({ status: 'success' });
+  }
+
+  updateTeam(teamName: string, teamId: string): Observable<Team> {
+    this.teams = this.teams.map((_team) => {
+      if (_team.teamId === teamId) {
+        _team.name = teamName;
+      }
+      return _team;
+    });
+    console.log(this.teams);
+
+    return this.getTeam(teamId);
   }
 }

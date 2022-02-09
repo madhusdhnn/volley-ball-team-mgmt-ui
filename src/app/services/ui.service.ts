@@ -5,15 +5,15 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class UiService {
-  private subject: Subject<string> = new Subject<string>();
+  private teamChangeSubject: Subject<string> = new Subject<string>();
 
   constructor() {}
 
   selectTeam(teamId: string): void {
-    this.subject.next(teamId);
+    this.teamChangeSubject.next(teamId);
   }
 
   onSelectTeam(): Observable<string> {
-    return this.subject.asObservable();
+    return this.teamChangeSubject.asObservable();
   }
 }

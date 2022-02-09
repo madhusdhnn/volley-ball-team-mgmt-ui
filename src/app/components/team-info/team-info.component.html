@@ -1,29 +1,3 @@
-<div class="team-header">
-  <h5 class="team-title">{{ team?.name }}</h5>
-  <div class="team-actions">
-    <div class="btn-section">
-      <button
-        *ngIf="isAdmin"
-        type="button"
-        name="edit-team-btn"
-        class="action-btn btn-edit"
-        (click)="editTeamDetails(team)"
-      >
-        <fa-icon [icon]="faPen" size="sm"></fa-icon>
-      </button>
-    </div>
-    <div class="btn-section" *ngIf="isAdmin">
-      <button
-        type="button"
-        name="delete-team-btn"
-        class="action-btn btn-delete"
-        (click)="deleteTeam(team)"
-      >
-        <fa-icon [icon]="faTrash" size="sm"></fa-icon>
-      </button>
-    </div>
-  </div>
-</div>
 <div class="team-info">
   <div>
     <p class="section-value">{{ totalPlayers }} / {{ team?.maxPlayers }}</p>
@@ -44,4 +18,4 @@
   <fa-icon [icon]="faPlus" size="sm"></fa-icon>
   <span class="btn-label">Create new team</span>
 </button>
-<player-modal *ngIf="isAdmin" [(toggleModal)]="toggleModal"></player-modal>
+<team-modal *ngIf="isAdmin" [(toggleModal)]="toggleModal"></team-modal>
