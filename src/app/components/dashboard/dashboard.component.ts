@@ -36,7 +36,6 @@ export class DashboardComponent implements OnInit {
         .getAllTeams()
         .subscribe((_teams) => (this.teams = _teams));
     }
-    console.log(this.teams);
 
     this.uiService.selectTeam('1');
   }

@@ -1,4 +1,4 @@
-import Profile from './Profile';
+import Profile from './models/Profile';
 
 const ADMIN_RESPONSE: { status: string; data: Profile } = {
   status: 'success',

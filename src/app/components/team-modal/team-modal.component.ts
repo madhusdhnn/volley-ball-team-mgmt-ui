@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTimes, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { TeamsService } from 'src/app/services/teams.service';
-import { NewTeam, Team } from 'src/app/Team';
+import { NewTeam } from '../../models/Team';
 
 @Component({
   selector: 'team-modal',

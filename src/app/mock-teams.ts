@@ -1,4 +1,4 @@
-import { Team } from './Team';
+import { Team } from './models/Team';
 
 const TEAM_RESPONSE: { status: string; data: Team[] } = {
   status: 'success',

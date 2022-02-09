@@ -1,6 +1,6 @@
 import { Audit } from './Audit';
 
-interface PlayerAdditionalInfo {
+export interface PlayerAdditionalInfo {
   age: number | null;
   height: number | null;
   weight: number | null;

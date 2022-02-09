@@ -1,4 +1,4 @@
-import { Player } from './Player';
+import { Player } from './models/Player';
 
 const PLAYERS_RESPONSE: { status: string; data: Player[] } = {
   status: 'success',

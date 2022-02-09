@@ -8,9 +8,9 @@
     <input
       [id]="team?.teamId"
       type="text"
-      name="teamName"
+      name="teamTitle"
       [disabled]="editMode ? false : 'disabled'"
-      [(ngModel)]="teamName"
+      [(ngModel)]="teamTitle"
       [ngClass]="editMode ? 'team-title' : 'disabled-team-title'"
     />
     <div *ngIf="editMode" class="btn-section btn-section-lg">

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TeamsService } from 'src/app/services/teams.service';
-import { Team } from 'src/app/Team';
+import { Team } from '../../models/Team';
 import { faPen, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -15,13 +15,13 @@ export class TeamTitleComponent implements OnInit {
   faSave = faSave;
   faPen = faPen;
   faTrash = faTrash;
-  teamName: string;
+  teamTitle: string;
   editMode: boolean = false;
 
   constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {
-    this.teamName = this.team?.name;
+    this.teamTitle = this.team?.name;
   }
 
   enableEditMode() {
@@ -34,7 +34,7 @@ export class TeamTitleComponent implements OnInit {
 
   onSubmit() {
     this.teamsService
-      .updateTeam(this.teamName, this.team?.teamId)
+      .updateTeam(this.teamTitle, this.team?.teamId)
       .subscribe(() => {
         this.editMode = false;
       });
