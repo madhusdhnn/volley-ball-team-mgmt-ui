@@ -7,18 +7,19 @@
     <button class="modal-close-btn" (click)="closeModal()">
       <fa-icon [icon]="faTimes" size="lg"></fa-icon>
     </button>
-    <h5>New Team</h5>
+    <h5>New team</h5>
     <form class="create-team-form" autocomplete="off" (submit)="onSubmit()">
       <div class="row">
         <div class="form-control col col-large">
-          <label for="team-name">Team Name</label>
+          <label for="team-name">Team name</label>
           <input
             type="text"
             id="team-name"
             name="teamName"
-            [(ngModel)]="teamName"
-            (ngModelChange)="changeTeamName($event)"
+            maxlength="15"
             [ngClass]="{ invalid: teamNameInvalid }"
+            [ngModel]="teamName"
+            (ngModelChange)="changeTeamName($event)"
           />
           <span
             class="helper-text"
@@ -26,7 +27,8 @@
             >Required</span
           >
           <p class="info-text">
-            NOTE: Currently a team can have only 6 players
+            Keep your team name short and meaningful. Please remember that a
+            team can consist of only six players.
           </p>
         </div>
         <div class="form-control col col-large">

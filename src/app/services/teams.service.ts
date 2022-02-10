@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import mockTeams from '../mock-teams';
 import { NewTeam, Team } from '../models/Team';
 
@@ -45,19 +45,22 @@ export class TeamsService {
         updatedAt: new Date().toLocaleDateString('en-US'),
       },
     };
-    this.teams.push(team);
+
+    const teams = this.teams;
+    teams.push(team);
+    this.teams = teams;
     return of({ status: 'success' });
   }
 
   updateTeam(teamName: string, teamId: string): Observable<Team> {
-    this.teams = this.teams.map((_team) => {
+    const teams = this.teams;
+    teams.forEach((_team) => {
       if (_team.teamId === teamId) {
         _team.name = teamName;
       }
       return _team;
     });
-    console.log(this.teams);
-
+    this.teams = teams;
     return this.getTeam(teamId);
   }
 }

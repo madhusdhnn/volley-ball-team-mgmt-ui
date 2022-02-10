@@ -1,6 +1,6 @@
 .modal-form {
   width: 400px;
-  height: 310px;
+  height: 320px;
 }
 
 .modal-form .modal-content {
@@ -9,7 +9,7 @@
 
 .create-team-form {
   width: 100%;
-  margin: 32px 0 0 0;
+  margin: 0;
 }
 
 .create-team-form .row {

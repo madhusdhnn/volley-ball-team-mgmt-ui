@@ -16,18 +16,7 @@
   width: 100%;
 }
 
-.disabled-team-title {
-  display: inline-block;
-  font-weight: 600;
-  border: none;
-  outline: none;
-  max-width: 100%;
-  background-color: transparent;
-  font-size: 1rem;
-  color: #000;
-}
-
-.team-title {
+.team-title-input {
   display: inline-block;
   height: 2rem;
   border: 1px solid #adb5bd;
@@ -40,11 +29,22 @@
   color: #001219;
 }
 
+.team-title {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  top: -2px;
+  font-size: 1.1rem;
+  max-width: 70%;
+  word-wrap: break-word;
+  color: #001219;
+}
+
 .team-title-form input[type="text"]:not(:disabled):focus {
   border: 1px solid #212529 !important;
 }
 
-.team-title.invalid {
+.team-title-input.invalid {
   border: 1px solid #dd2c2f;
   color: #dd2c2f;
 }

@@ -10,7 +10,6 @@ import { NewTeam } from '../../models/Team';
 })
 export class TeamModalComponent implements OnInit {
   @Input() toggleModal: boolean = false;
-
   @Output() toggleModalChange = new EventEmitter<boolean>();
 
   faTimes = faTimes;
@@ -24,15 +23,16 @@ export class TeamModalComponent implements OnInit {
   ngOnInit(): void {}
 
   changeTeamName(val: any) {
-    if (val && this.teamNameInvalid) {
+    if (this.teamNameInvalid) {
       this.teamNameInvalid = false;
     }
+    this.teamName = val;
   }
 
   closeModal() {
     this.toggleModal = false;
-    this.toggleModalChange.emit(this.toggleModal);
     this.resetForm();
+    this.toggleModalChange.emit(this.toggleModal);
   }
 
   onSubmit() {
@@ -54,5 +54,6 @@ export class TeamModalComponent implements OnInit {
 
   private resetForm(): void {
     this.teamName = '';
+    this.teamNameInvalid = false;
   }
 }

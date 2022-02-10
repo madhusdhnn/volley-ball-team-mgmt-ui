@@ -1,17 +1,18 @@
 <div class="team-header">
   <form
+    *ngIf="editMode"
     autocomplete="off"
     class="team-title-form"
     [ngClass]="{ 'full-width': editMode }"
     (submit)="onSubmit()"
   >
     <input
-      [id]="team?.teamId"
+      [id]="currentTeam?.teamId"
       type="text"
       name="teamTitle"
-      [disabled]="editMode ? false : 'disabled'"
+      class="team-title-input"
+      maxlength="15"
       [(ngModel)]="teamTitle"
-      [ngClass]="editMode ? 'team-title' : 'disabled-team-title'"
     />
     <div *ngIf="editMode" class="btn-section btn-section-lg">
       <button
@@ -24,6 +25,7 @@
       </button>
     </div>
   </form>
+  <h5 *ngIf="!editMode" class="team-title">{{ currentTeam?.name }}</h5>
   <div class="team-actions" *ngIf="!editMode">
     <div class="btn-section">
       <button
@@ -41,10 +43,11 @@
         type="button"
         name="delete-team-btn"
         class="action-btn btn-delete"
-        (click)="deleteTeam(team)"
+        (click)="deleteTeam(currentTeam)"
       >
         <fa-icon [icon]="faTrash" size="sm"></fa-icon>
       </button>
     </div>
   </div>
 </div>
+<span *ngIf="editMode" class="helper-text">Max characters: 15</span>

@@ -9,22 +9,24 @@ import { faPen, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./team-title.component.css'],
 })
 export class TeamTitleComponent implements OnInit {
-  @Input() team: Team;
+  @Input() currentTeam: Team;
   @Input() isAdmin: boolean = false;
 
   faSave = faSave;
   faPen = faPen;
   faTrash = faTrash;
+
   teamTitle: string;
   editMode: boolean = false;
 
   constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {
-    this.teamTitle = this.team?.name;
+    this.teamTitle = this.currentTeam?.name;
   }
 
   enableEditMode() {
+    this.teamTitle = this.currentTeam?.name;
     this.editMode = true;
   }
 
@@ -32,10 +34,15 @@ export class TeamTitleComponent implements OnInit {
     console.log(team);
   }
 
+  changeTeamTitle(e: any) {
+    this.teamTitle = e.target.value;
+  }
+
   onSubmit() {
     this.teamsService
-      .updateTeam(this.teamTitle, this.team?.teamId)
-      .subscribe(() => {
+      .updateTeam(this.teamTitle, this.currentTeam?.teamId)
+      .subscribe((_team) => {
+        this.teamTitle = _team.name;
         this.editMode = false;
       });
   }
