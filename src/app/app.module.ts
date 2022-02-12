@@ -15,6 +15,7 @@ import { AllPlayersComponent } from './components/all-players/all-players.compon
 import { FormsModule } from '@angular/forms';
 import { TeamModalComponent } from './components/team-modal/team-modal.component';
 import { TeamTitleComponent } from './components/team-title/team-title.component';
+import { PlayerModalComponent } from './components/player-modal/player-modal.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     AllPlayersComponent,
     TeamModalComponent,
     TeamTitleComponent,
+    PlayerModalComponent,
   ],
   imports: [
     BrowserModule,

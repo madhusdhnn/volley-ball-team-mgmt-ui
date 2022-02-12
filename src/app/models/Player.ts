@@ -11,12 +11,20 @@ export interface PlayerAdditionalInfo {
 }
 
 export interface TeamInfo {
-  id: string;
+  id: string | null;
+  name: string | null;
+}
+
+export interface NewPlayer {
   name: string;
+  initials: string;
+  photoUrl: string | null;
+  team: TeamInfo;
+  shirtNo: number;
 }
 
 export interface Player {
-  playerId?: string;
+  playerId: string;
   name: string;
   initials: string;
   photoUrl: string | null;

@@ -93,12 +93,7 @@
 }
 
 .btn-create-player.btn-create {
-  width: 25%;
   margin-top: 0;
-}
-
-.btn-create-player.btn-create > span {
-  margin-left: 8px;
 }
 
 .player-name {

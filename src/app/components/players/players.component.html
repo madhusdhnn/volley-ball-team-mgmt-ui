@@ -5,10 +5,10 @@
     type="button"
     name="create-player-btn"
     class="action-btn btn-create-player btn-create"
-    (click)="addPlayerToTeam()"
+    (click)="toggleAddPlayerModal()"
   >
     <fa-icon [icon]="faPlus" size="sm"></fa-icon>
-    <span>Add player</span>
+    <span class="btn-label">Add player</span>
   </button>
 </div>
 <div class="players" *ngIf="players.length > 0; else noMembers">
@@ -25,6 +25,12 @@
     </p>
   </a>
 </div>
+<player-modal
+  *ngIf="isAdmin && players.length < 6"
+  [(modalVisible)]="toggleModal"
+  [currentTeamCount]="currentTeamCount"
+  [currentTeam]="currentTeam"
+></player-modal>
 
 <ng-template #noMembers>
   <div class="empty-players">

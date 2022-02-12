@@ -20,8 +20,8 @@
         name="team-title-btn-submit"
         class="action-btn btn-save"
       >
+        <span class="btn-label">Save</span>
         <fa-icon [icon]="faSave" size="sm"></fa-icon>
-        <span>Save</span>
       </button>
     </div>
   </form>
@@ -50,4 +50,6 @@
     </div>
   </div>
 </div>
-<span *ngIf="editMode" class="helper-text">Max characters: 15</span>
+<span class="helper-text" [ngClass]="{ active: editMode }"
+  >Max characters: 15
+</span>
