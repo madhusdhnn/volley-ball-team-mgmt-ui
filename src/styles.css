@@ -285,6 +285,7 @@ input {
   color: #000;
   border-radius: 16px;
   display: none;
+  overflow: hidden;
 }
 
 .modal h1,
@@ -297,13 +298,12 @@ input {
 }
 
 .modal .modal-content {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   padding: 24px;
-  overflow: auto;
+  overflow: visible;
 }
 
 .modal .modal-content .modal-close-btn {

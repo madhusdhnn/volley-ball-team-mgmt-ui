@@ -1,16 +1,15 @@
 .add-player-modal {
   width: 450px;
-  height: 90%;
+  min-height: 65%;
 }
 
 .add-player-modal .modal-content {
-  height: 90%;
   padding: 0;
 }
 
 .add-player-modal-header {
   padding: 24px;
-  max-height: 40%;
+  height: 165px;
 }
 
 .add-player-modal-footer {
@@ -19,12 +18,11 @@
 
 .selected-players-wrapper {
   margin: 24px 0 16px 0;
-  min-height: 75px;
-  height: 100%;
+  height: 40px;
 }
 
 #players-list {
-  max-height: 400px;
+  max-height: 300px;
   height: 100%;
   overflow-y: auto;
   border-top: 1px solid #e0e0e0;
@@ -39,13 +37,20 @@
   margin: 0;
 }
 
-.player-li:not(.selected-player).disabled {
+.player-li:not(.selected-player).disabled,
+.player-li:not(.selected-player).disabled > label,
+.player-li:not(.selected-player).disabled .player-detail {
+  cursor: not-allowed;
   background-color: transparent;
+}
+
+.player-li:not(.selected-player):not(.disabled):hover {
+  background-color: #f8f9fa;
+  transition: background-color 80ms ease-in;
 }
 
 .player-li.selected-player {
   background-color: #f8f9fa;
-  transition: background-color 80ms ease-in;
 }
 
 .player-li:last-child {
