@@ -19,7 +19,7 @@ import { AllPlayersComponent } from './components/all-players/all-players.compon
 import { TeamModalComponent } from './components/team-modal/team-modal.component';
 import { TeamTitleComponent } from './components/team-title/team-title.component';
 import { PlayerModalComponent } from './components/player-modal/player-modal.component';
-import { LoginComponent } from './components/auth/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 
 import { AuthGuard } from './guards/auth.guard';
