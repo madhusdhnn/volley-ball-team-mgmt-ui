@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import mockTeams from '../mock-teams';
+import ApiResponse from '../models/ApiResponse';
 import { NewTeam, Team } from '../models/Team';
 
 @Injectable({
@@ -8,31 +11,20 @@ import { NewTeam, Team } from '../models/Team';
 })
 export class TeamsService {
   teams: Team[] = [];
-  constructor() {
+  constructor(private http: HttpClient) {
     this.teams = mockTeams.data;
   }
 
   getAllTeams(): Observable<Team[]> {
-    return of(this.teams);
+    return this.http
+      .get<ApiResponse<Team[]>>(`${environment.apiBaseUrl}/teams`)
+      .pipe(map((resp) => resp.data));
   }
 
-  // returns currently logged in player's team
   getTeam(teamId: string): Observable<Team> {
-    const dummy = {
-      teamId: '1',
-      name: 'Friends Women',
-      displayName: 'Friends Girls',
-      maxPlayers: 6,
-      audit: {
-        createdAt: new Date('2022-01-08T13:23:00.582Z').toLocaleDateString(
-          'en-US'
-        ),
-        updatedAt: new Date('2022-01-08T13:23:04.598Z').toLocaleDateString(
-          'en-US'
-        ),
-      },
-    };
-    return of(this.teams.find((_team) => _team.teamId === teamId) || dummy);
+    return this.http
+      .get<ApiResponse<Team>>(`${environment.apiBaseUrl}/teams/${teamId}`)
+      .pipe(map((resp) => resp.data));
   }
 
   createTeam(newTeam: NewTeam): Observable<{ status: string }> {

@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import mockPlayers from '../mock-players';
 import mockPlayersAvailable from '../mock-players-free';
+import ApiResponse from '../models/ApiResponse';
 import AssignPlayerToTeam from '../models/AssignPlayerToTeam';
 import { Player } from '../models/Player';
 
@@ -12,13 +15,17 @@ export class PlayersService {
   players: Player[] = [];
   free: Player[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.players = mockPlayers.data;
     this.free = mockPlayersAvailable.data;
   }
 
   getPlayersInTeam(teamId: string): Observable<Player[]> {
-    return of(this.players.filter((_player) => _player.team.id === teamId));
+    return this.http
+      .get<ApiResponse<Player[]>>(
+        `${environment.apiBaseUrl}/teams/${teamId}/players`
+      )
+      .pipe(map((res) => res.data));
   }
 
   getAllPlayers(): Observable<Player[]> {

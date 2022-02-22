@@ -1,4 +1,7 @@
+import CurrentUser from './CurrentUser';
+
 export default interface Authentication {
   accessToken: string;
-  refreshToken: string;
+  expiresIn: number;
+  user: CurrentUser;
 }

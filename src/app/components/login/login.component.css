@@ -1,0 +1,30 @@
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form {
+  width: 100%;
+}
+
+.btn-submit-wrapper {
+  margin-top: 2rem;
+}
+
+.label-text {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.password-eye {
+  top: 42px;
+  right: 10px;
+  position: absolute;
+  z-index: 2;
+}
+
+.password-eye:hover {
+  cursor: pointer;
+}
