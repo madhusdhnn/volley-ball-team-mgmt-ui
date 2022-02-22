@@ -1,11 +1,11 @@
-<nav class="nav-bar">
+<nav *ngIf="showNav" class="nav-bar">
   <div class="container">
     <div class="row">
-      <div class="col col-large">
+      <div class="col col-medium col-offset-xs">
         <div class="nav-items">
           <a
             id="home-nav-link"
-            routerLink="/"
+            routerLink="/dashboard"
             routerLinkActive="nav-item-active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-item"
@@ -13,7 +13,7 @@
           >
           <a
             id="my-profile-nav-link"
-            [routerLink]="['/profile']"
+            [routerLink]="['/dashboard', 'profile']"
             routerLinkActive="nav-item-active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-item"
@@ -22,7 +22,7 @@
           <a
             *ngIf="isAdmin"
             id="all-players-nav-link"
-            [routerLink]="['/players', 'all']"
+            [routerLink]="['/dashboard', 'players', 'all']"
             routerLinkActive="nav-item-active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-item"
@@ -30,6 +30,14 @@
           >
         </div>
       </div>
+      <div class="col col-small">
+        <div class="signout-wrapper">
+          <button name="logout" class="logout-btn" (click)="onSignOut()">
+            <span class="btn-label">sign out</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>

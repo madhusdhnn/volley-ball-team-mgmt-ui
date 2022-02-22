@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { TeamsService } from 'src/app/services/teams.service';
 import { Team } from '../../models/Team';
 import { faPen, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './team-title.component.html',
   styleUrls: ['./team-title.component.css'],
 })
-export class TeamTitleComponent implements OnInit {
+export class TeamTitleComponent implements OnInit, OnDestroy {
   @Input() currentTeam: Team;
   @Input() isAdmin: boolean = false;
 
@@ -58,5 +58,9 @@ export class TeamTitleComponent implements OnInit {
         this.teamTitle = _team.name;
         this.editMode = false;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.teamChangeSubscription.unsubscribe();
   }
 }

@@ -6,11 +6,33 @@
 
 .nav-items {
   margin: 16px auto 0 auto;
-  max-width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.signout-wrapper {
+  margin: 9px auto 0 auto;
+  float: right;
+}
+
+.logout-btn {
+  background-color: #ee9b00;
+  padding: 6px 16px;
+  border-radius: 4px;
+  line-height: 1.5rem;
+  font-weight: 500;
+  transition: transform 80ms ease-in-out;
+}
+
+.logout-btn:hover {
+  cursor: pointer;
+  transform: scale(0.98);
+}
+
+.logout-btn .btn-label {
+  margin: 0;
 }
 
 .nav-item,
