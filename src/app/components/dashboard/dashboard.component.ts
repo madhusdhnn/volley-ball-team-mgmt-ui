@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, tap, map, mergeMap, filter } from 'rxjs';
 import { Player } from '../../models/Player';
 import { PlayersService } from 'src/app/services/players.service';
 import { TeamsService } from 'src/app/services/teams.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Team } from '../../models/Team';
-import CurrentUser from 'src/app/models/CurrentUser';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CurrentUserLike } from 'src/app/models/types';
 
 @Component({
   selector: 'dashboard',
@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   players: Player[] = [];
   currentTeam: Team;
   isAdmin: boolean = false;
-  currentUser: CurrentUser | null;
+  currentUser: CurrentUserLike;
 
   selectedTeamSubscription: Subscription;
   currentUserSubscription: Subscription;
@@ -36,23 +36,32 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.setPlayers(_teamId);
       });
 
-    this.currentUserSubscription = this.authService
-      .onCurrentUser()
-      .subscribe((_currentUser) => {
-        this.currentUser = _currentUser;
-        this.isAdmin = this.currentUser?.roleName === 'ADMIN';
-      });
+    const result = this.authService.onCurrentUser().pipe(
+      filter((_currentUser) => !!_currentUser),
+      tap((_currentUser) => (this.currentUser = _currentUser)),
+      tap(
+        (_currentUser) => (this.isAdmin = _currentUser?.roleName === 'ADMIN')
+      ),
+      mergeMap(() => {
+        if (this.isAdmin) {
+          return this.teamsService.getAllTeams();
+        }
+        return this.authService
+          .fetchProfile()
+          .pipe(map((_profile) => [_profile.team]));
+      }),
+      tap((_teams) => (this.teams = _teams)),
+      map((_teams) => _teams[0]),
+      tap((_team) => (this.currentTeam = _team)),
+      mergeMap((_team) => this.playerService.getPlayersInTeam(_team.teamId))
+    );
+
+    this.currentUserSubscription = result.subscribe((_players) => {
+      this.players = _players;
+    });
   }
 
-  ngOnInit(): void {
-    if (this.isAdmin) {
-      this.teamsService
-        .getAllTeams()
-        .subscribe((_teams) => (this.teams = _teams));
-    }
-
-    this.uiService.selectTeam('1');
-  }
+  ngOnInit(): void {}
 
   onTeamChange(teamId: string) {
     this.uiService.selectTeam(teamId);

@@ -1,11 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, mapTo, Observable, of, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  mapTo,
+  map,
+  Observable,
+  of,
+  tap,
+} from 'rxjs';
 import { environment } from '../../environments/environment';
 import ApiResponse from '../models/ApiResponse';
 import Authentication from '../models/Authentication';
 import CurrentUser from '../models/CurrentUser';
-import { CurrentUserLike } from '../models/types';
+import Profile from '../models/Profile';
+import { CurrentUserLike, ProfileLike } from '../models/types';
 
 @Injectable({
   providedIn: 'root',
@@ -47,6 +56,12 @@ export class AuthenticationService {
         return of(false);
       })
     );
+  }
+
+  fetchProfile(): Observable<Profile> {
+    return this.http
+      .get<ApiResponse<Profile>>(`${environment.apiBaseUrl}/profile`)
+      .pipe(map((res) => res.data));
   }
 
   clearAuth() {

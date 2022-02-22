@@ -1,11 +1,9 @@
+import CurrentUser from './CurrentUser';
+import { Player } from './Player';
+import { Team } from './Team';
+
 export default interface Profile {
-  username: string;
-  fullName: string;
-  firstName: string;
-  lastName: string;
-  profileImageUrl: string | null;
-  emailId: string;
-  roleId: string;
-  roleName: string;
-  enabled: boolean;
+  user: CurrentUser;
+  player: Player;
+  team: Team;
 }

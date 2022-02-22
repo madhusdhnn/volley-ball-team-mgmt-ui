@@ -6,6 +6,6 @@ export default interface CurrentUser {
   fullName: string;
   roleId: string;
   roleName: string;
-  profileImageUrl: string;
-  emailId: string;
+  profileImageUrl: string | null;
+  emailId: string | null;
 }

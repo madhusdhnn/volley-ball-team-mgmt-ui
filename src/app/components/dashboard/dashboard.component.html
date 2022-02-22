@@ -3,6 +3,7 @@
     <teams-dropdown
       *ngIf="isAdmin"
       [teams]="teams"
+      [selectedTeam]="currentTeam"
       (selectTeamEvent)="onTeamChange($event)"
     ></teams-dropdown>
     <div class="col col-small">
