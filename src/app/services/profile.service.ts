@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import Profile from '../models/Profile';
-import mockUser from '../mock-user';
 import { environment } from 'src/environments/environment';
 import ApiResponse from '../models/ApiResponse';
 import { HttpClient } from '@angular/common/http';

@@ -6,15 +6,7 @@ import {
   HttpInterceptor,
   HttpErrorResponse,
 } from '@angular/common/http';
-import {
-  catchError,
-  map,
-  Observable,
-  of,
-  Subscription,
-  tap,
-  throwError,
-} from 'rxjs';
+import { catchError, Observable, of, Subscription, throwError } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
 import { CommonService } from '../services/common.service';
 import ApiResponse from '../models/ApiResponse';

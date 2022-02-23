@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, mapTo, map, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, mapTo, Observable, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import ApiResponse from '../models/ApiResponse';
 import Authentication from '../models/Authentication';
 import CurrentUser from '../models/CurrentUser';
-import Profile from '../models/Profile';
-import { CurrentUserLike, ProfileLike } from '../models/types';
+import { CurrentUserLike } from '../models/types';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   Subscription,
-  tap,
   map,
   filter,
   Observable,
