@@ -1,14 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  BehaviorSubject,
-  catchError,
-  mapTo,
-  map,
-  Observable,
-  of,
-  tap,
-} from 'rxjs';
+import { BehaviorSubject, mapTo, map, Observable, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import ApiResponse from '../models/ApiResponse';
 import Authentication from '../models/Authentication';
@@ -38,30 +30,20 @@ export class AuthenticationService {
     const body = { username, password };
     return this.http.post<any>(`${environment.authBaseUrl}/signin`, body).pipe(
       tap((response) => this.handleLoginResponse(response)),
-      mapTo(true),
-      catchError((err) => {
-        alert(err);
-        return of(false);
-      })
+      mapTo(true)
     );
   }
 
   logout(): Observable<boolean> {
     return this.http.post<any>(`${environment.authBaseUrl}/signout`, {}).pipe(
       tap(() => this.clearAuth()),
-      mapTo(true),
-      catchError((err) => {
-        this.clearAuth();
-        alert(JSON.stringify(err));
-        return of(false);
-      })
+      mapTo(true)
     );
   }
 
-  fetchProfile(): Observable<Profile> {
-    return this.http
-      .get<ApiResponse<Profile>>(`${environment.apiBaseUrl}/profile`)
-      .pipe(map((res) => res.data));
+  clientLogout(): Observable<never> {
+    this.clearAuth();
+    return of();
   }
 
   clearAuth() {

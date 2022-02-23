@@ -1,5 +1,5 @@
 export interface ApiFailureResponse {
-  code?: string;
+  code: string;
   message: string;
   detail?: string;
 }

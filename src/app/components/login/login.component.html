@@ -50,12 +50,20 @@
                 (click)="togglePasswordIcon()"
               ></fa-icon>
             </div>
+            <div
+              class="form-control error-message-wrapper"
+              [ngClass]="{ active: errorMessage.length > 0 }"
+            >
+              <p [ngClass]="{ 'error-message': errorMessage.length > 0 }">
+                Error: {{ errorMessage }}
+              </p>
+            </div>
             <div class="form-control btn-submit-wrapper">
               <input
                 type="submit"
                 name="login-submit-btn"
                 class="btn-submit"
-                value="sign in"
+                value="submit"
               />
             </div>
           </form>

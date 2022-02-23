@@ -31,8 +31,6 @@ export class AuthenticationInterceptor implements HttpInterceptor {
       },
     });
 
-    return next
-      .handle(request)
-      .pipe(catchError((err) => throwError(() => new Error(err))));
+    return next.handle(request);
   }
 }

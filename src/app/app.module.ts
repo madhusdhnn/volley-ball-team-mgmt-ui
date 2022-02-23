@@ -27,6 +27,7 @@ import { AnonymousGuard } from './guards/anonymous.guard';
 
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
+import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
 
 const appRoutes: Routes = [
   {
@@ -50,7 +51,11 @@ const appRoutes: Routes = [
       { path: 'players/all', component: AllPlayersComponent },
     ],
   },
-  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
 ];
 
 const interceptorProviders = [
@@ -62,6 +67,11 @@ const interceptorProviders = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorHandlerInterceptor,
     multi: true,
   },
 ];

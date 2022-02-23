@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { catchError, of } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
 
   password: string = '';
   passwordInvalid: boolean = false;
+
+  errorMessage: string = '';
 
   constructor(
     private authService: AuthenticationService,
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit {
     if (this.usernameInvalid) {
       this.usernameInvalid = false;
     }
+    this.errorMessage = '';
     this.username = val;
   }
 
@@ -42,6 +46,7 @@ export class LoginComponent implements OnInit {
     if (this.passwordInvalid) {
       this.passwordInvalid = false;
     }
+    this.errorMessage = '';
     this.password = val;
   }
 
@@ -66,6 +71,12 @@ export class LoginComponent implements OnInit {
     if (!isError) {
       this.authService
         .login(this.username, this.password)
+        .pipe(
+          catchError((err) => {
+            this.errorMessage = err.message;
+            return of();
+          })
+        )
         .subscribe((result) => {
           if (result) {
             this.clearForm();

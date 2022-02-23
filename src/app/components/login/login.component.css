@@ -9,8 +9,30 @@
   width: 100%;
 }
 
+.error-message-wrapper {
+  margin: 0.5rem;
+  height: 4px;
+  opacity: 0;
+}
+
+.error-message-wrapper.active {
+  height: 15px;
+  opacity: 1;
+}
+
+.error-message-wrapper > p,
+.error-message-wrapper.active > p {
+  margin: 0;
+}
+
+.error-message {
+  color: #dd2c2f;
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .btn-submit-wrapper {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .label-text {

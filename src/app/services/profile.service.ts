@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import Profile from '../models/Profile';
 import mockUser from '../mock-user';
+import { environment } from 'src/environments/environment';
+import ApiResponse from '../models/ApiResponse';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProfileService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  // fetch user details from the JWT token
-  fetchUserProfile(userId: string): Observable<Profile> {
-    let user: Profile;
-    if (userId === '1') {
-      user = mockUser.admin.data;
-    } else {
-      user = mockUser.player.data;
-    }
-    return of(user);
+  fetchProfile(): Observable<Profile> {
+    return this.http
+      .get<ApiResponse<Profile>>(`${environment.apiBaseUrl}/profile`)
+      .pipe(map((res) => res.data));
   }
 }
