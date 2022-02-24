@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExclamationCircle,
+  faEye,
+  faEyeSlash,
+} from '@fortawesome/free-solid-svg-icons';
 import { catchError, of } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -12,6 +16,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LoginComponent implements OnInit {
   faEye = faEye;
   faEyeSlash = faEyeSlash;
+  faExclamationCircle = faExclamationCircle;
 
   showPassword: boolean = false;
 

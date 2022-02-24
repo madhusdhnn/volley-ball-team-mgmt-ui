@@ -10,29 +10,22 @@
 }
 
 .error-message-wrapper {
-  margin: 0.5rem;
-  height: 4px;
-  opacity: 0;
+  display: none;
 }
 
 .error-message-wrapper.active {
-  height: 15px;
-  opacity: 1;
+  display: block;
 }
 
-.error-message-wrapper > p,
-.error-message-wrapper.active > p {
-  margin: 0;
+.error-message-wrapper > span,
+.error-message-wrapper.active > span {
+  margin-left: 6px;
 }
 
 .error-message {
   color: #dd2c2f;
   font-weight: 500;
-  font-size: 12px;
-}
-
-.btn-submit-wrapper {
-  margin-top: 1rem;
+  font-size: 13px;
 }
 
 .label-text {

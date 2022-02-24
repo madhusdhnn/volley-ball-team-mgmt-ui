@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row section">
+  <div *ngIf="currentTeam; else noTeam" class="row section">
     <teams-dropdown
       *ngIf="isAdmin"
       [teams]="teams"
@@ -24,3 +24,11 @@
     </div>
   </div>
 </div>
+
+<ng-template #noTeam>
+  <div class="no-team-content">
+    <h2>Hi, {{ currentUser?.firstName || "there" }}!</h2>
+    <p>You don't belong to any of the teams</p>
+    <p>Please ask your administrator to add you to a team</p>
+  </div>
+</ng-template>

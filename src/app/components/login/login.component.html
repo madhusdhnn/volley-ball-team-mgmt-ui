@@ -1,7 +1,7 @@
 <div class="container login-container">
   <div class="row">
     <div class="col col-medium col-offset-small">
-      <div class="card small">
+      <div class="card">
         <div class="card-content">
           <form
             class="login-form"
@@ -50,15 +50,7 @@
                 (click)="togglePasswordIcon()"
               ></fa-icon>
             </div>
-            <div
-              class="form-control error-message-wrapper"
-              [ngClass]="{ active: errorMessage.length > 0 }"
-            >
-              <p [ngClass]="{ 'error-message': errorMessage.length > 0 }">
-                Error: {{ errorMessage }}
-              </p>
-            </div>
-            <div class="form-control btn-submit-wrapper">
+            <div class="form-control">
               <input
                 type="submit"
                 name="login-submit-btn"
@@ -67,6 +59,15 @@
               />
             </div>
           </form>
+          <div
+            class="alert error error-message-wrapper"
+            [ngClass]="{ active: errorMessage.length > 0 }"
+          >
+            <fa-icon [icon]="faExclamationCircle" size="sm"></fa-icon>
+            <span [ngClass]="{ 'error-message': errorMessage.length > 0 }">
+              {{ errorMessage }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
