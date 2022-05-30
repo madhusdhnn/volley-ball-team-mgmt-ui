@@ -1,8 +1,4 @@
-<div
-  id="add-player-modal"
-  class="modal modal-form add-player-modal"
-  [ngClass]="{ open: modalVisible }"
->
+<div id="add-player-modal" class="modal modal-form add-player-modal" [ngClass]="{ open: modalVisible }">
   <div class="modal-content">
     <div class="add-player-modal-header">
       <button class="modal-close-btn" (click)="closeModal()">
@@ -15,34 +11,22 @@
         </div>
       </div>
       <span *ngIf="freePlayers.length > 0" class="helper-text active">
-        NOTE: There are {{ 6 - currentTeamCount }} slots left in this team.
+        Team Name: {{ currentTeam.name }},&nbsp;Slots Available: {{ 6 - currentTeamCount }}
       </span>
     </div>
     <form autocomplete="off" (submit)="onSubmit()">
       <ul id="players-list" class="row">
-        <li
-          class="form-control col col-large player-li"
-          [ngClass]="{
+        <li class="form-control col col-large player-li" [ngClass]="{
             'selected-player': playersSelected[player.playerId],
             disabled: maxPlayersReached && !playersSelected[player.playerId]
-          }"
-          *ngFor="let player of freePlayers"
-        >
+          }" *ngFor="let player of freePlayers">
           <label class="player-input-label" [attr.for]="player.playerId">
-            <input
-              [id]="player.playerId"
-              type="checkbox"
-              id="player-name"
-              name="playerName"
-              [attr.disabled]="
+            <input [id]="player.playerId" type="checkbox" id="player-name" name="playerName" [attr.disabled]="
                 maxPlayersReached && !playersSelected[player.playerId]
                   ? ''
                   : null
-              "
-              [checked]="playersSelected[player.playerId]"
-              [ngModel]="playersSelected[player.playerId]"
-              (ngModelChange)="onPlayerSelect($event, player)"
-            />
+              " [checked]="playersSelected[player.playerId]" [ngModel]="playersSelected[player.playerId]"
+              (ngModelChange)="onPlayerSelect($event, player)" />
             <span class="player-detail">
               <span class="player-input-label-text">{{ player.name }}</span>
               <span class="player-input-label-location">
